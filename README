@@ -4,6 +4,6 @@ kernmod { 'loop': ensure => present }
 
 To do:
 
-1. Allow module for module options
+1. Support module options
 2. Add support for 'enable' (save to modprobe.d or something)
 3. Add Solaris provider (drvadd and friends)
