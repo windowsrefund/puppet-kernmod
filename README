@@ -1,9 +1,16 @@
+A type/provider to manage a kernel module
+
+Supported Platforms:
+
+ - GNU/Linux
+
 Example:
 
-kernmod { 'loop': ensure => present }
+  kernmod { 'loop': params => [ 'max_loop=2', 'max_part=2'] }
 
 To do:
 
-1. Support module options
-2. Add support for 'enable' (save to modprobe.d or something)
-3. Add Solaris provider (drvadd and friends)
+  1. Fix validation method in :params
+  2. Add support for 'enable' (save to modprobe.d or something)
+  3. Add Solaris provider (drvadd and friends)
+

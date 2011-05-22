@@ -5,7 +5,7 @@ Puppet::Type.type(:kernmod).provide(:modprobe) do
 		commands :modprobe => 'modprobe'
 
 		def create
-			modprobe resource[:name]
+			modprobe resource[:name], resource[:params]
 		end
 
 		def destroy
