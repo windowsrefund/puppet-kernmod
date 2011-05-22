@@ -28,13 +28,13 @@ Puppet::Type.newtype(:kernmod) do
 			validate do |value|
 				raise ArgumentError, "Parameters must be passed as an array" unless value.to_a.respond_to?('each')
 
-				# this is no workie
-				#unless value.to_a.each =~ /^\w=.*$/
-				#	raise ArgumentError, "Parameters must be passed in key=value format"
-				#end	
+				value.each do |val|
+					raise ArgumentError, "Parameters must be passed in key=value format" unless val =~ /^\w+=\w/
+				end
 
 			end
 
 		end
 
 end
+
